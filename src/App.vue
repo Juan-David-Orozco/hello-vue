@@ -1,7 +1,9 @@
 <template>
-  <MyComponent data="Welcome App Vue" />
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MyComponent v-if="!login" data="Welcome App Vue" />
+  <div v-else>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
@@ -10,9 +12,20 @@ import MyComponent from './components/MyComponent.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      login: false
+    }
+  },
   components: {
     HelloWorld,
     MyComponent
+  },
+  methods: {
+    userAuth(userData) {
+      console.log(userData.user, userData.email)
+      //this.login = true
+    }
   }
 }
 </script>
