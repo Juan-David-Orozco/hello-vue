@@ -1,5 +1,7 @@
 # hello-vue
 
+## Welcome the App Vue
+
 ## Project setup
 ```
 npm install
